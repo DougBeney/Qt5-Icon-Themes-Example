@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/elementary/actions/16/mail-reply-sender.svg</file>
+        <file>icons/elementary/index.theme</file>
+        <file>icons/elementary/custom/cool-tux-penguin.png</file>
+    </qresource>
+</RCC>

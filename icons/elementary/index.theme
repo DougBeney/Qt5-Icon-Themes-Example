@@ -1,0 +1,15 @@
+[Icon Theme]
+Name=some-custom-theme
+Comment=The mail-sender-reply icon is from the Elementary icon pack.
+
+[custom]
+Size=256
+MinSize=8
+MaxSize=256
+Type=Scalable
+
+[actions/16]
+Size=16
+MinSize=8
+MaxSize=23
+Type=Scalable
