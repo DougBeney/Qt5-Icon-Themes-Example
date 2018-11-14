@@ -2,32 +2,32 @@
 #include <QFrame>
 #include <QVBoxLayout>
 #include <QPushButton>
-
-#include <crossplatformicon.h>
+#include <QDebug>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    // First we set the main theme. In this case, we'll set it to the system icon theme.
-    CrossPlatformIcon::setThemeName( QIcon::themeName() );
-    // Next we'll set a fallback icon theme
-    CrossPlatformIcon::setFallbackThemeName("elementary");
+    QIcon::setFallbackSearchPaths(QIcon::fallbackSearchPaths() << ":custom-icons");
 
+    // Create a layout and two buttons
     QVBoxLayout *l = new QVBoxLayout;
     QPushButton *b1 = new QPushButton("Button 1");
     QPushButton *b2 = new QPushButton("Button 2");
-    b1->setIcon( CrossPlatformIcon::get("mail-reply-sender") );
-    b2->setIcon( CrossPlatformIcon::get("cool-tux-penguin") );
-
     l->addWidget( b1 );
     l->addWidget( b2 );
 
+    // OPTIONAL: Set your own icon pack. By default, Qt will search in :icons/
+    QIcon::setThemeName( "zafiro" );
+
+    // Set icons from theme
+    b1->setIcon( QIcon::fromTheme("folder-alt") ); // Most Linux icon packs will have a "battery" icon.
+    b2->setIcon( QIcon::fromTheme("open-app-library") ); // If this does not exist in icon pack (It won't), it will search :custom-icons/
+
+    // Create a frame that uses layout and show widgets
     QFrame *f = new QFrame;
     f->setLayout(l);
     f->show();
 
-    int status = a.exec();
-    CrossPlatformIcon::destroyIconManager();
-    return status;
+    return a.exec();
 }

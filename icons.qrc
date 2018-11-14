@@ -1,7 +1,8 @@
 <RCC>
     <qresource prefix="/">
-        <file>icons/elementary/actions/16/mail-reply-sender.svg</file>
-        <file>icons/elementary/index.theme</file>
-        <file>icons/elementary/custom/cool-tux-penguin.png</file>
+        <file>icons/zafiro/index.theme</file>
+        <file>main.cpp</file>
+        <file>custom-icons/open-app-library.png</file>
+        <file>icons/zafiro/places/48/folder-alt.svg</file>
     </qresource>
 </RCC>
