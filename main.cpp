@@ -1,3 +1,4 @@
+
 #include <QApplication>
 #include <QFrame>
 #include <QVBoxLayout>
@@ -8,8 +9,6 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    QIcon::setFallbackSearchPaths(QIcon::fallbackSearchPaths() << ":custom-icons");
-
     // Create a layout and two buttons
     QVBoxLayout *l = new QVBoxLayout;
     QPushButton *b1 = new QPushButton("Button 1");
@@ -19,6 +18,8 @@ int main(int argc, char *argv[])
 
     // OPTIONAL: Set your own icon pack. By default, Qt will search in :icons/
     QIcon::setThemeName( "zafiro" );
+		// If we request an icon that is not found in the icon pack, search in the :custom-icons folder.
+    QIcon::setFallbackSearchPaths(QIcon::fallbackSearchPaths() << ":custom-icons");
 
     // Set icons from theme
     b1->setIcon( QIcon::fromTheme("folder-alt") ); // Most Linux icon packs will have a "battery" icon.
