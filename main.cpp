@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
   QIcon::setFallbackSearchPaths(QIcon::fallbackSearchPaths() << ":custom-icons");
 
   // Set icons from theme
-  b1->setIcon( QIcon::fromTheme("folder-alt") ); // Most Linux icon packs will have a "battery" icon.
+  b1->setIcon( QIcon::fromTheme("folder-alt") ); // Most Linux icon packs will have a "folder-alt" icon.
   b2->setIcon( QIcon::fromTheme("open-app-library") ); // If this does not exist in icon pack (It won't), it will search :custom-icons/
 
   // Create a frame that uses layout and show widgets
